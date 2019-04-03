@@ -5,8 +5,9 @@ fortran: false
 pandoc: false
 
 before_install:
-  - mkdir tmp; cd tmp; git clone --depth=1 --branch=bugfix/port-win-fixes https://github.com/javierluraschi/arrow.git; mv arrow/r/* ../; cd ..; rm -frv tmp
-
+  - mkdir tmp; cd tmp; git clone --depth=1 --branch=bugfix/port-win-fixes https://github.com/javierluraschi/arrow.git; mv arrow/r/* ../; cd ..
+  - cp -frv tmp/arrow/r/.Rbuildignore .Rbuildignore
+  
 matrix:
   include:
   - os: osx
