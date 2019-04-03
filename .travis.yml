@@ -1,0 +1,13 @@
+language: r
+cache: packages
+latex: false
+fortran: false
+pandoc: false
+
+before_install:
+  - mkdir tmp; cd tmp; git clone --depth=1 --branch=master https://github.com/apache/arrow.git; mv -fr r/* ../; cd ..; rm -frv tmp
+
+matrix:
+  include:
+  - os: osx
+    brew_packages: apache-arrow
