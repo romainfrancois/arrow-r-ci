@@ -5,7 +5,7 @@ fortran: false
 pandoc: false
 
 before_install:
-  - mkdir tmp; cd tmp; git clone --depth=1 --branch=master https://github.com/apache/arrow.git; mv r/* ../; cd ..; rm -frv tmp
+  - mkdir tmp; cd tmp; git clone --depth=1 --branch=master https://github.com/apache/arrow.git; mv arrow/r/* ../; cd ..; rm -frv tmp
 
 matrix:
   include:
